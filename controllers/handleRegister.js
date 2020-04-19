@@ -1,7 +1,7 @@
 
 const handleRegister = (req,res,db,bcrypt) =>{
     const { name,email,password } = req.body;
-    console.log(request.body)
+    console.log(req.body)
     if (password.length>=8  && (name&&email) ){
     db('users')
     .returning('*')
