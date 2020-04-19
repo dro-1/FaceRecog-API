@@ -13,10 +13,8 @@ const clarifaiEndpoint = require('./controllers/handleClarifaiCall');
 const db = knex({
     client: 'pg',
     connection:{
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: 'password',
-        database: 'facerecog_db'
+        connectionString: process.env.DATABASE_URL,
+        ssl: true
     }
 })
 
