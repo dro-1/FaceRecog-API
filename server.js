@@ -12,9 +12,11 @@ const clarifaiEndpoint = require('./controllers/handleClarifaiCall');
 
 const db = knex({
     client: 'pg',
-    connection:{
-        connectionString: process.env.DATABASE_URL,
-        ssl: true,
+    connection: process.env.DATABASE_URL,
+    ssl: true,
+    debug:true,
+    migrations: {
+        tableName : 'migrations'
     }
 })
 
